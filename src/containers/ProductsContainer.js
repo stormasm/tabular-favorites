@@ -30,6 +30,15 @@ const columns = [
     header: {
       label: "Inventory",
     }
+  },
+  {
+    property: "addtocart",
+    header: {
+      label: "Add to cart",
+    },
+    props: {
+      style: { minWidth: 85, width: 85 }
+    }
   }
 ];
 
