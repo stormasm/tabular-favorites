@@ -1,7 +1,11 @@
-This is attempting to show a generic way to save
-rows in a Reactabular table to another spot.
 
-The concept of favorites in Hackernews is the model.
+Start with reactabular-shopping-cart and keep going.
+
+Idea is to get the functionality exact on both sides of the isle.
+
+With and without the tables.  So you can drive the state from inside the table or outside of it.
+
+Eventually this code will come together with the other version.
 
 # Redux Shopping Cart Example
 
