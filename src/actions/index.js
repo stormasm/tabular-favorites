@@ -49,22 +49,3 @@ export const checkout = products => (dispatch, getState) => {
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })
   })
 }
-
-export const tableactions = {
-  createProductRow: (row) => ({
-    type: 'CREATE_PRODUCT_ROW',
-    row: { row }
-  }),
-  createCartRow: (row) => ({
-    type: 'CREATE_CART_ROW',
-    row: { row }
-  }),
-  deleteProductRow: id => ({
-    type: 'DELETE_PRODUCT_ROW',
-    row: { id }
-  }),
-  deleteCartRow: id => ({
-    type: 'DELETE_CART_ROW',
-    row: { id }
-  }),
-};
