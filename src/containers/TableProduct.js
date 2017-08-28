@@ -61,14 +61,16 @@ class TableProduct extends React.Component {
   }
 */
 /*
-  const hasRows = rows.length > 0;
-  if (!hasRows) {
-      return null;
-  }
 */
   render() {
     const { rows } = this.props;
     const { columns } = this.props;
+
+    const hasRows = rows.length > 0;
+    if (!hasRows) {
+        return null;
+    }
+
 
 
   return (
