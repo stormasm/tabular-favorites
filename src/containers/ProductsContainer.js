@@ -22,7 +22,7 @@ const ProductsContainer = ({ products, addToCart }) => (
     </ProductsList>
   </Box>
   <Box width={1 / 2} px={2}>
-    <TableProduct rows={products}/>
+    <TableProduct />
   </Box>
   </Flex>
 )

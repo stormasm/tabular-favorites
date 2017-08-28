@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 
 import { connect } from 'react-redux';
 import { addToCart } from '../actions';
@@ -52,11 +52,25 @@ const columns = [
   }
 ];
 
-const TableProduct  = ({ rows }) => {
+
+
+class TableProduct extends React.Component {
+/*
+  constructor(props) {
+    super(props);
+  }
+*/
+/*
   const hasRows = rows.length > 0;
   if (!hasRows) {
       return null;
   }
+*/
+  render() {
+    const { rows } = this.props;
+    const { columns } = this.props;
+
+
   return (
     <Table.Provider
       className="pure-table pure-table-striped"
@@ -65,17 +79,18 @@ const TableProduct  = ({ rows }) => {
       <Table.Header />
       <Table.Body rows={rows} rowKey="id" />
     </Table.Provider>
-  )
+  )}
 }
 
+/*
 TableProduct.propTypes = {
   rows: PropTypes.array,
-//  columns: PropTypes.array
+  columns: PropTypes.array
 }
-
+*/
 const mapStateToProps = state => ({
   columns: columns,
-  products: getVisibleProducts(state.products)
+  rows: getVisibleProducts(state.products)
 })
 
 export default connect(
