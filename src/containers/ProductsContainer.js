@@ -7,7 +7,7 @@ import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 
 import { Flex, Box } from "grid-styled";
-import TableWrapper from './TableWrapper';
+import TableProduct from './TableProduct';
 
 const columns = [
   {
@@ -67,7 +67,7 @@ const ProductsContainer = ({ products, addToCart }) => (
     </ProductsList>
   </Box>
   <Box width={1 / 2} px={2}>
-    <TableWrapper rows={products} columns={columns}/>
+    <TableProduct rows={products} columns={columns}/>
   </Box>
   </Flex>
 )

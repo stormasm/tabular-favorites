@@ -8,7 +8,7 @@ import CartItem from "../components/CartItem";
 import CartList from "../components/CartList";
 
 import { Flex, Box } from "grid-styled";
-import TableWrapper from './TableWrapper';
+import TableCart from './TableCart';
 
 const columns = [
   {
@@ -49,7 +49,7 @@ const CartContainer = ({ products, total, removeFromCart, checkout }) =>
         </CartList>
       </Box>
       <Box width={1 / 2} px={2}>
-        <TableWrapper rows={products} columns={columns}/>
+        <TableCart rows={products} columns={columns}/>
       </Box>
     </Flex>
     <Cart
