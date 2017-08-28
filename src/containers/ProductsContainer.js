@@ -44,7 +44,7 @@ const columns = [
         (value, { rowData }) => (
           <span
             className="remove"
-            onClick={() => this.props.deleteRow(rowData.id)} style={{ cursor: 'pointer' }}
+            onClick={() => console.log(this.props)} style={{ cursor: 'pointer' }}
           >
             &#10007;
           </span>
