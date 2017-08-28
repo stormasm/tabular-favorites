@@ -9,51 +9,6 @@ import ProductsList from '../components/ProductsList'
 import { Flex, Box } from "grid-styled";
 import TableProduct from './TableProduct';
 
-const columns = [
-  {
-    property: "title",
-    header: {
-      label: "Title",
-    },
-    props: {
-      style: { minWidth: 175, width: 175 }
-    }
-  },
-  {
-    property: "price",
-    header: {
-      label: "Price",
-    }
-  },
-  {
-    property: "inventory",
-    header: {
-      label: "Inventory",
-    }
-  },
-  {
-    property: "addtocart",
-    header: {
-      label: "Add to cart",
-    },
-    props: {
-      style: { minWidth: 85, width: 85 }
-    },
-    cell: {
-      formatters: [
-        (value, { rowData }) => (
-          <span
-            className="remove"
-            onClick={() => console.log(this.props)} style={{ cursor: 'pointer' }}
-          >
-            &#10007;
-          </span>
-        )
-      ]
-    }
-  }
-];
-
 const ProductsContainer = ({ products, addToCart }) => (
   <Flex>
     <Box width={1 / 2} px={2}>
@@ -67,7 +22,7 @@ const ProductsContainer = ({ products, addToCart }) => (
     </ProductsList>
   </Box>
   <Box width={1 / 2} px={2}>
-    <TableProduct rows={products} columns={columns}/>
+    <TableProduct rows={products}/>
   </Box>
   </Flex>
 )

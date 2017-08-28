@@ -10,30 +10,6 @@ import CartList from "../components/CartList";
 import { Flex, Box } from "grid-styled";
 import TableCart from './TableCart';
 
-const columns = [
-  {
-    property: "title",
-    header: {
-      label: "Title"
-    },
-    props: {
-      style: { minWidth: 175, width: 175 }
-    }
-  },
-  {
-    property: "price",
-    header: {
-      label: "Price"
-    }
-  },
-  {
-    property: "quantity",
-    header: {
-      label: "Quantity"
-    }
-  }
-];
-
 const CartContainer = ({ products, total, removeFromCart, checkout }) =>
   <div>
     <Flex>
@@ -49,7 +25,7 @@ const CartContainer = ({ products, total, removeFromCart, checkout }) =>
         </CartList>
       </Box>
       <Box width={1 / 2} px={2}>
-        <TableCart rows={products} columns={columns}/>
+        <TableCart rows={products}/>
       </Box>
     </Flex>
     <Cart
