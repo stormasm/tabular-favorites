@@ -25,7 +25,7 @@ const CartContainer = ({ products, total, removeFromCart, checkout }) =>
         </CartList>
       </Box>
       <Box width={1 / 2} px={2}>
-        <TableCart rows={products}/>
+        <TableCart />
       </Box>
     </Flex>
     <Cart

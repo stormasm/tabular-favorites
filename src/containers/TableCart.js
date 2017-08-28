@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { checkout, removeFromCart } from "../actions";
@@ -31,11 +31,17 @@ const columns = [
   }
 ];
 
-const TableCart  = ({ rows }) => {
-  const hasRows = rows.length > 0;
-  if (!hasRows) {
-      return null;
-  }
+
+class TableCart extends React.Component {
+  render() {
+    const { rows } = this.props;
+    const { columns } = this.props;
+
+    const hasRows = rows.length > 0;
+    if (!hasRows) {
+        return null;
+    }
+
   return (
     <Table.Provider
       className="pure-table pure-table-striped"
@@ -44,17 +50,19 @@ const TableCart  = ({ rows }) => {
       <Table.Header />
       <Table.Body rows={rows} rowKey="id" />
     </Table.Provider>
-  )
+  )}
 }
 
+/*
 TableCart.propTypes = {
   rows: PropTypes.array,
-//  columns: PropTypes.array
+  columns: PropTypes.array
 }
+*/
 
 const mapStateToProps = state => ({
   columns: columns,
-  products: getCartProducts(state),
+  rows: getCartProducts(state),
   total: getTotal(state)
 });
 

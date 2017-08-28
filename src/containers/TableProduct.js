@@ -55,13 +55,6 @@ const columns = [
 
 
 class TableProduct extends React.Component {
-/*
-  constructor(props) {
-    super(props);
-  }
-*/
-/*
-*/
   render() {
     const { rows } = this.props;
     const { columns } = this.props;
@@ -70,8 +63,6 @@ class TableProduct extends React.Component {
     if (!hasRows) {
         return null;
     }
-
-
 
   return (
     <Table.Provider
