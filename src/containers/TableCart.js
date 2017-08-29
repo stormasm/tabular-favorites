@@ -51,7 +51,7 @@ class TableCart extends React.Component {
             label: "Remove from cart",
           },
           props: {
-            style: { minWidth: 85, width: 85 }
+            style: { minWidth: 140, width: 140 }
           },
           cell: {
             formatters: [
@@ -60,7 +60,7 @@ class TableCart extends React.Component {
                   className="remove"
                   onClick={() => this.props.removeFromCart(rowData.id)} style={{ cursor: 'pointer' }}
                 >
-                  &#10007;
+                  &#x2715;
                 </span>
               )
             ]
