@@ -1,104 +1,85 @@
 import React from "react";
-//import PropTypes from "prop-types";
-
 import { connect } from "react-redux";
 import { checkout, removeFromCart } from "../actions";
 import { getTotal, getCartProducts } from "../reducers";
-
 import * as Table from "reactabular-table";
 
-
-
 class TableCart extends React.Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      columns: this.getColumns(), // initial columns
+      columns: this.getColumns()
     };
   }
 
   getColumns() {
-
     return [
-
-        {
-          property: "title",
-          header: {
-            label: "Title"
-          },
-          props: {
-            style: { minWidth: 175, width: 175 }
-          }
+      {
+        property: "title",
+        header: {
+          label: "Title"
         },
-        {
-          property: "price",
-          header: {
-            label: "Price"
-          }
-        },
-        {
-          property: "quantity",
-          header: {
-            label: "Quantity"
-          }
-        },
-
-        {
-          property: "removefromcart",
-          header: {
-            label: "Remove from cart",
-          },
-          props: {
-            style: { minWidth: 140, width: 140 }
-          },
-          cell: {
-            formatters: [
-              (value, { rowData }) => (
-                <span
-                  className="remove"
-                  onClick={() => this.props.removeFromCart(rowData.id)} style={{ cursor: 'pointer' }}
-                >
-                  &#x2715;
-                </span>
-              )
-            ]
-          }
+        props: {
+          style: { minWidth: 175, width: 175 }
         }
-
-
-
+      },
+      {
+        property: "price",
+        header: {
+          label: "Price"
+        }
+      },
+      {
+        property: "quantity",
+        header: {
+          label: "Quantity"
+        }
+      },
+      {
+        property: "removefromcart",
+        header: {
+          label: "Remove from cart"
+        },
+        props: {
+          style: { minWidth: 140, width: 140 }
+        },
+        cell: {
+          formatters: [
+            (value, { rowData }) =>
+              <span
+                className="remove"
+                onClick={() => this.props.removeFromCart(rowData.id)}
+                style={{ cursor: "pointer" }}
+              >
+                &#x2715;
+              </span>
+          ]
+        }
+      }
     ];
-}
+  }
 
   render() {
     const { rows } = this.props;
-    // const { columns } = this.props;
     const { columns } = this.state;
 
     const hasRows = rows.length > 0;
     if (!hasRows) {
-        return null;
+      return null;
     }
 
-  return (
-    <Table.Provider
-      className="pure-table pure-table-striped"
-      columns={columns}
-    >
-      <Table.Header />
-      <Table.Body rows={rows} rowKey="id" />
-    </Table.Provider>
-  )}
+    return (
+      <Table.Provider
+        className="pure-table pure-table-striped"
+        columns={columns}
+      >
+        <Table.Header />
+        <Table.Body rows={rows} rowKey="id" />
+      </Table.Provider>
+    );
+  }
 }
-
-/*
-TableCart.propTypes = {
-  rows: PropTypes.array,
-  columns: PropTypes.array
-}
-*/
 
 const mapStateToProps = state => ({
   rows: getCartProducts(state),
