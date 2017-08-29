@@ -1,11 +1,7 @@
 
-Start with reactabular-shopping-cart and keep going.
+This is the redux shopping cart with the added functionality of reactabular.
 
-Idea is to get the functionality exact on both sides of the isle.
-
-With and without the tables.  So you can drive the state from inside the table or outside of it.
-
-Eventually this code will come together with the other version.
+So you have the example redux view and the reactabular view.
 
 # Redux Shopping Cart Example
 
