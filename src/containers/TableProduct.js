@@ -34,6 +34,9 @@ class TableProduct extends React.Component {
         property: "inventory",
         header: {
           label: "Inventory"
+        },
+        props: {
+          style: { minWidth: 70, width: 70 }
         }
       },
       {
@@ -42,7 +45,7 @@ class TableProduct extends React.Component {
           label: "Add to cart"
         },
         props: {
-          style: { minWidth: 85, width: 85 }
+          style: { minWidth: 140, width: 140 }
         },
         cell: {
           formatters: [

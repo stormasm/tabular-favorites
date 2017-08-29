@@ -34,6 +34,9 @@ class TableCart extends React.Component {
         property: "quantity",
         header: {
           label: "Quantity"
+        },
+        props: {
+          style: { minWidth: 70, width: 70 }
         }
       },
       {
