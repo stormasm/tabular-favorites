@@ -58,7 +58,7 @@ class TableProduct extends React.Component {
               (value, { rowData }) => (
                 <span
                   className="remove"
-                  onClick={() => console.log(this.props)} style={{ cursor: 'pointer' }}
+                  onClick={() => this.props.addToCart(rowData.id)} style={{ cursor: 'pointer' }}
                 >
                   &#10007;
                 </span>
