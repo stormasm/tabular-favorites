@@ -28,6 +28,9 @@ class TableProduct extends React.Component {
         property: "price",
         header: {
           label: "Price"
+        },
+        props: {
+          style: { minWidth: 40, width: 40 }
         }
       },
       {
