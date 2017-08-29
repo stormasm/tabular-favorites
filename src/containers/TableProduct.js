@@ -7,57 +7,73 @@ import { getVisibleProducts } from '../reducers/products';
 
 import * as Table from "reactabular-table";
 
-const columns = [
-  {
-    property: "title",
-    header: {
-      label: "Title",
-    },
-    props: {
-      style: { minWidth: 175, width: 175 }
-    }
-  },
-  {
-    property: "price",
-    header: {
-      label: "Price",
-    }
-  },
-  {
-    property: "inventory",
-    header: {
-      label: "Inventory",
-    }
-  },
-  {
-    property: "addtocart",
-    header: {
-      label: "Add to cart",
-    },
-    props: {
-      style: { minWidth: 85, width: 85 }
-    },
-    cell: {
-      formatters: [
-        (value, { rowData }) => (
-          <span
-            className="remove"
-            onClick={() => console.log(this.props)} style={{ cursor: 'pointer' }}
-          >
-            &#10007;
-          </span>
-        )
-      ]
-    }
-  }
-];
+
 
 
 
 class TableProduct extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      columns: this.getColumns(), // initial columns
+    };
+  }
+
+  getColumns() {
+
+    return [
+        {
+          property: "title",
+          header: {
+            label: "Title",
+          },
+          props: {
+            style: { minWidth: 175, width: 175 }
+          }
+        },
+        {
+          property: "price",
+          header: {
+            label: "Price",
+          }
+        },
+        {
+          property: "inventory",
+          header: {
+            label: "Inventory",
+          }
+        },
+        {
+          property: "addtocart",
+          header: {
+            label: "Add to cart",
+          },
+          props: {
+            style: { minWidth: 85, width: 85 }
+          },
+          cell: {
+            formatters: [
+              (value, { rowData }) => (
+                <span
+                  className="remove"
+                  onClick={() => console.log(this.props)} style={{ cursor: 'pointer' }}
+                >
+                  &#10007;
+                </span>
+              )
+            ]
+          }
+        }
+    ];
+}
+
   render() {
     const { rows } = this.props;
-    const { columns } = this.props;
+    // const { columns } = this.props;
+    const { columns } = this.state;
+
 
     const hasRows = rows.length > 0;
     if (!hasRows) {
@@ -82,7 +98,6 @@ TableProduct.propTypes = {
 }
 */
 const mapStateToProps = state => ({
-  columns: columns,
   rows: getVisibleProducts(state.products)
 })
 
