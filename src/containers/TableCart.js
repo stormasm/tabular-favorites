@@ -7,35 +7,50 @@ import { getTotal, getCartProducts } from "../reducers";
 
 import * as Table from "reactabular-table";
 
-const columns = [
-  {
-    property: "title",
-    header: {
-      label: "Title"
-    },
-    props: {
-      style: { minWidth: 175, width: 175 }
-    }
-  },
-  {
-    property: "price",
-    header: {
-      label: "Price"
-    }
-  },
-  {
-    property: "quantity",
-    header: {
-      label: "Quantity"
-    }
-  }
-];
 
 
 class TableCart extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      columns: this.getColumns(), // initial columns
+    };
+  }
+
+  getColumns() {
+
+    return [
+
+        {
+          property: "title",
+          header: {
+            label: "Title"
+          },
+          props: {
+            style: { minWidth: 175, width: 175 }
+          }
+        },
+        {
+          property: "price",
+          header: {
+            label: "Price"
+          }
+        },
+        {
+          property: "quantity",
+          header: {
+            label: "Quantity"
+          }
+        }
+    ];
+}
+
   render() {
     const { rows } = this.props;
-    const { columns } = this.props;
+    // const { columns } = this.props;
+    const { columns } = this.state;
 
     const hasRows = rows.length > 0;
     if (!hasRows) {
@@ -61,7 +76,6 @@ TableCart.propTypes = {
 */
 
 const mapStateToProps = state => ({
-  columns: columns,
   rows: getCartProducts(state),
   total: getTotal(state)
 });
