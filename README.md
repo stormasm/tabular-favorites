@@ -1,5 +1,5 @@
 
-This is the redux shopping cart with the added functionality of reactabular.
+This is the [redux shopping cart](https://github.com/reactjs/redux/tree/master/examples/shopping-cart) with the added functionality of reactabular and the ability to remove items from your cart prior to checking out.
 
 So you have the example redux view and the reactabular view.
 
