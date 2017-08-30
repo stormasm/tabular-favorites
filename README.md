@@ -3,6 +3,8 @@ This is the redux shopping cart with the added functionality of reactabular.
 
 So you have the example redux view and the reactabular view.
 
+The next repo in the evolutionary chain is [reactabular-shopping-cart](https://github.com/stormasm/reactabular-shopping-cart) which has just the reactabular view and not both.
+
 # Redux Shopping Cart Example
 
 This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app), which provides a simple way to start React projects with no build configuration needed.
